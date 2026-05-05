@@ -65,7 +65,4 @@ The app runs on host 0.0.0.0, which allows it to be accessed by other devices in
 - Make sure port 5000 is allowed in firewall
 - Both devices should be connected to same network
 
----
 
-## Submission
-Push this project to GitHub and share the repository link.
