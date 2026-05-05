@@ -1,47 +1,71 @@
-Dockerized Hello World Application
-Overview
-This project demonstrates a minimal web application packaged as a Docker container. The application responds with a simple message and is accessible over a local network (intranet).
+# Dockerized Hello World Application
 
-Tech Stack
-Python 3
-Flask
-Docker
+## Overview
+This project demonstrates a simple Flask-based web application containerized using Docker. The app serves a basic "Hello World" message and is accessible over a local network (intranet).
 
-Project Structure
+---
+
+## Tech Stack
+- Python 3
+- Flask
+- Docker
+
+---
+
+## Project Structure
 .
 ├── app.py
 ├── requirements.txt
 └── Dockerfile
 
-Application Behavior
-Runs a Flask server on port 5000
-Returns a plain text response when accessing /
+---
 
-Build Instructions
-Run the following command in the project directory:
+## Application Behavior
+- Runs on port 5000
+- Returns "Hello World from Docker!" when accessed
+
+---
+
+## Build Docker Image
+Run inside the project folder:
 docker build -t hello-docker-app .
 
-Run the Container
+---
+
+## Run Docker Container
 docker run -d -p 5000:5000 hello-docker-app
 
-Access the Application
-On Local Machine
+---
+
+## Access the Application
+
+### On same system
 http://localhost:5000
-On Another Device (Same Network)
+
+### On another device (same Wi-Fi)
 http://172.16.1.227:5000
 
-Intranet Communication
-The application binds to 0.0.0.0, allowing access from other devices within the same network. Using your system’s IPv4 address enables testing across devices.
+---
 
-Verification
-Ensure the container is running:
-docker ps
-Confirm port mapping:
-0.0.0.0:5000->5000
+## Intranet Communication
+The app runs on host 0.0.0.0, which allows it to be accessed by other devices in the same network using your IPv4 address.
 
-Notes
-Ensure port 5000 is not blocked by firewall settings
-Both devices must be connected to the same network
+---
 
-Repository
-Upload this project to your GitHub repository and share the link as required.
+## Verification Steps
+1. Check running containers:
+   docker ps
+
+2. Confirm port mapping:
+   0.0.0.0:5000->5000
+
+---
+
+## Notes
+- Make sure port 5000 is allowed in firewall
+- Both devices should be connected to same network
+
+---
+
+## Submission
+Push this project to GitHub and share the repository link.
